@@ -1,7 +1,5 @@
 #### Youtube-responsive-mobile
 
-[화면 기록 2022-06-23 오후 3.24.51.zip](https://github.com/S-MunSoo/youtube-responsive-clon/files/8964623/2022-06-23.3.24.51.zip)
-
 
 #### 학습 목표
 
