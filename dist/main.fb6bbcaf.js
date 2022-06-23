@@ -118,42 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function test() {
-  return _test.apply(this, arguments);
-}
-
-function _test() {
-  _test = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var promise;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            promise = Promise.resolve(123222);
-            _context.t0 = console;
-            _context.next = 4;
-            return promise;
-
-          case 4:
-            _context.t1 = _context.sent;
-
-            _context.t0.log.call(_context.t0, _context.t1);
-
-          case 6:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _test.apply(this, arguments);
-}
-
-test();
+var moreBtn = document.querySelector(".info .metadata .moreBtn");
+var title = document.querySelector(".info .metadata .title");
+moreBtn.addEventListener("click", function () {
+  moreBtn.classList.toggle("clicked");
+  title.classList.toggle("clamp");
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -182,7 +152,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49551" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

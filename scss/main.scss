@@ -1,10 +1,203 @@
+// color
 $color--black: #000;
 $color--white: #fff;
+$color--blue: #045fd4;
+$color--red: #ff0000;
+$color--grey-dark: #909090;
+$color--grey-light: #e0e0e0;
 
-body {
+// font size
+$font--large: 18px;
+$font--medium: 18px;
+$font--small: 12px;
+$font--large: 18px;
+$font--micro: 10px;
+
+// size
+$--padding: 14px;
+$avatar--size: 36px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+// header
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: $--padding;
   background-color: $color--black;
-  h1 {
-    color: $color--white;
+  color: $color--white;
+  .logo {
+    font-size: font--large;
+  }
+  .logo i {
+    color: $color--red;
+  }
+  .icons .fas fa-search {
+    margin-right: $--padding;
+  }
+}
+// video Player %이용하기
+
+.player {
+  // 비디오 스크롤링 햇을때 고정 할려고 하면   position: sticky;
+  position: sticky;
+  top: 0; // sticky 고정값
+
+  text-align: center;
+  background-color: $color--black;
+  video {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+  }
+}
+// video Info
+.info {
+  padding: $--padding;
+  .metadata {
+    .hashtags {
+      display: flex;
+      font-size: $font--small;
+      color: $color--blue;
+    }
+    .hashtags li {
+      margin-right: $--padding;
+    }
+    .titleAndButton {
+      display: flex;
+      .title {
+        font-size: $font--medium;
+        margin-right: $--padding;
+      }
+      .title .clamp {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .moreBtn {
+        height: 100%;
+        transition: transform 300ms ease-in-out;
+      }
+      .moreBtn .clicked {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .views {
+    font-size: $font--small;
+    color: $color--grey-dark;
+  }
+}
+// Actions buttons
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: $--padding 0;
+  button {
     display: flex;
+    flex-direction: column;
+    font-size: $font--small;
+    color: $color--grey-dark;
+    i {
+      margin: 0 auto;
+      margin-bottom: calc($--padding / 2);
+      font-size: 16px;
+      &.active {
+        color: $color--blue;
+      }
+    }
+  }
+}
+// Channel description
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $color--grey-light;
+  border-bottom: 1px solid $color--grey-light;
+  .metadata {
+    display: flex;
+    align-items: center;
+    & img {
+      width: $avatar--size;
+      height: $avatar--size;
+      border-radius: $avatar--size;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      .name {
+        font-size: $font--medium;
+      }
+      .subscribers {
+        font-size: $font--small;
+        color: $color--grey-dark;
+      }
+    }
+  }
+  .subscribe {
+    text-transform: uppercase; // 대문자 표현
+    color: $color--red;
+    font-size: $font--medium;
+    background-color: $color--white;
+  }
+}
+// Up next
+.upNext {
+  padding: $--padding;
+  > .title {
+    font-size: $font--medium;
+    color: $color--grey-dark;
+    margin-bottom: calc($--padding / 2);
+  }
+  .item {
+    display: flex;
+    margin-top: $--padding;
+    &.img {
+      flex: 1 1 35%;
+      margin-right: $--padding;
+    }
+    & img {
+      width: 100%;
+    }
+    &.info {
+      flex: 1 1 60%;
+      display: flex;
+      flex-direction: column;
+      .name,
+      .views {
+        font-size: $font--micro;
+        color: $color--grey-dark;
+      }
+    }
+    &.moreBtn {
+      flex: 1 1 5%;
+    }
+  }
+}
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: $--padding 0;
   }
 }

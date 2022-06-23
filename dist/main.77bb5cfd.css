@@ -1,9 +1,181 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background-color: #000;
+  color: #fff;
+}
+header .logo {
+  font-size: font--large;
+}
+header .logo i {
+  color: #ff0000;
+}
+header .icons .fas fa-search {
+  margin-right: 14px;
+}
+
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
   background-color: #000;
 }
-body h1 {
-  color: #fff;
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.info {
+  padding: 14px;
+}
+.info .metadata .hashtags {
   display: flex;
+  font-size: 12px;
+  color: #045fd4;
+}
+.info .metadata .hashtags li {
+  margin-right: 14px;
+}
+.info .metadata .titleAndButton {
+  display: flex;
+}
+.info .metadata .titleAndButton .title {
+  font-size: 18px;
+  margin-right: 14px;
+}
+.info .metadata .titleAndButton .title .clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+.info .metadata .titleAndButton .moreBtn .clicked {
+  transform: rotate(180deg);
+}
+.info .views {
+  font-size: 12px;
+  color: #909090;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 14px 0;
+}
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #909090;
+}
+.actions button i {
+  margin: 0 auto;
+  margin-bottom: 7px;
+  font-size: 16px;
+}
+.actions button i.active {
+  color: #045fd4;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+.channel .metadata img {
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+}
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.channel .metadata .info .name {
+  font-size: 18px;
+}
+.channel .metadata .info .subscribers {
+  font-size: 12px;
+  color: #909090;
+}
+.channel .subscribe {
+  text-transform: uppercase;
+  color: #ff0000;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.upNext {
+  padding: 14px;
+}
+.upNext > .title {
+  font-size: 18px;
+  color: #909090;
+  margin-bottom: 7px;
+}
+.upNext .item {
+  display: flex;
+  margin-top: 14px;
+}
+.upNext .item.img {
+  flex: 1 1 35%;
+  margin-right: 14px;
+}
+.upNext .item img {
+  width: 100%;
+}
+.upNext .item.info {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+}
+.upNext .item.info .name,
+.upNext .item.info .views {
+  font-size: 10px;
+  color: #909090;
+}
+.upNext .item.moreBtn {
+  flex: 1 1 5%;
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: 14px 0;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

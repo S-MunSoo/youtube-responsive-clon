@@ -1,5 +1,7 @@
-async function test() {
-  const promise = Promise.resolve(123222);
-  console.log(await promise);
-}
-test();
+const moreBtn = document.querySelector(".info .metadata .moreBtn");
+const title = document.querySelector(".info .metadata .title");
+
+moreBtn.addEventListener("click", () => {
+  moreBtn.classList.toggle("clicked");
+  title.classList.toggle("clamp");
+});
